@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'me.xtomyserrax'
+version = '4.8.5-API-SNAPSHOT'
+
+sourceCompatibility = '1.11'
+targetCompatibility = '1.11'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT'
+}
+
+tasks.build.finalizedBy(javadoc)
